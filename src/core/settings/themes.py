@@ -61,7 +61,7 @@ JAZZMIN_SETTINGS = {
         "auth.group": "vertical_tabs",
         "clinic.AboutUs": "single",
     },
-    "language_chooser": True,
+    # "language_chooser": True,
 }
 
 JAZZMIN_UI_TWEAKS = {

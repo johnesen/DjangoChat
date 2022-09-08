@@ -32,7 +32,7 @@ class UserService:
 
     @classmethod
     def get(cls, **filters) -> User:
-        return cls.model.objects.get(**filters)
+        return cls.model.objects.filter(**filters)
 
     @classmethod
     def get_user(cls, **filters) -> User:

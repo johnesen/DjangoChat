@@ -13,6 +13,7 @@ django-jazzmin = "*"
 python-decouple = "*"
 djangorestframework-simplejwt = "*"
 pillow = "*"
+django-filter = "*"
 
 [dev-packages]
 
