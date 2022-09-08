@@ -5,7 +5,7 @@ src/back_media/*
 src/back_static/*
 src/.idea/*
 src/.env
-# migrations/
+migrations/
 src/db.sqlite3
 .venv/*
 db.sqlite3
@@ -18,5 +18,3 @@ venv/
 *.pyc
 __pycache__/
 src/__pycache__/
-# migrations/*
-# src/migrations/
