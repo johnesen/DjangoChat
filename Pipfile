@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+channels = "*"
+drf-yasg = "*"
+django-cors-headers = "*"
+django-jazzmin = "*"
+python-decouple = "*"
+djangorestframework-simplejwt = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

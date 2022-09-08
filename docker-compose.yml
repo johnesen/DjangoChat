@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  back:
+    container_name: njohnny_back
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn --chdir src --bind :8000 core.wsgi:application --reload
+    ports:
+      - 8000:8000
+    env_file:
+      - src/.env
+    volumes:
+      - .:/opt/services/njohnny
+      - ./static/static_data:/opt/services/njohnny/src/back_static
+      - ./static/media_data:/opt/services/njohnny/src/back_media
+    networks:
+      - db_network
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: postgres
+    container_name: chat_db
+    restart: always
+    env_file:
+      - src/.env
+    networks:
+      - db_network
+    volumes:
+      - ./storage/postgres_data:/var/lib/postgresql/data
+
+networks:
+  db_network:
+    driver: bridge
