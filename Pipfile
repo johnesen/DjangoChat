@@ -13,6 +13,9 @@ django-jazzmin = "*"
 python-decouple = "*"
 djangorestframework-simplejwt = "*"
 pillow = "*"
+django-filter = "*"
+psycopg2-binary = "*"
+gunicorn = "*"
 
 [dev-packages]
 

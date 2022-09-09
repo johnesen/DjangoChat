@@ -9,10 +9,10 @@ User = get_user_model()
 
 
 class RegisterSerializer(serializers.Serializer):
-    # username = serializers.CharField(min_length=2, required=True, validators=[
-    #     UniqueValidator(
-    #         queryset=User.objects.all()
-    #     )])
+    username = serializers.CharField(min_length=2, required=True, validators=[
+        UniqueValidator(
+            queryset=User.objects.all()
+        )])
     email = serializers.EmailField(min_length=2, required=True, validators=[
         UniqueValidator(
             queryset=User.objects.all()
