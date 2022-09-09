@@ -6,8 +6,17 @@
    ```sh
    git clone https://github.com/nurj0hn/DjangoChat.git
    ```
+2. Create virtual environment with `pipenv`
+   ```sh
+   pipenv shell
+   ```
+   
+   and install requirements
+   ```sh
+   pipenv install
+   ````
   
-2. Create `.env` file in src/
+3. Create `.env` file in src/
    ```.env
    SECRET_KEY=<secret_key>
    DB_NAME=<db_user>
@@ -20,7 +29,6 @@
    CORS_ALLOWED_ORIGINS=<host>
    ALLOWED_HOSTS=<host>
    ```
-   
    
    
    if ```PRODUCTION=True```
