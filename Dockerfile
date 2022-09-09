@@ -1,9 +1,10 @@
 FROM python:3.10
 
 RUN mkdir -p /opt/services/njohnny
-
 WORKDIR /opt/services/njohnny
+
+ADD requirements.txt /opt/services/njohnny/
 
 COPY . /opt/services/njohnny/
 
-RUN pipenv install
+RUN pip install -r requirements.txt

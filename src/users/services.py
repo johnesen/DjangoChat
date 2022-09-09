@@ -26,13 +26,16 @@ class JWTTokenService:
         return cls.model.objects.filter(user=user).delete()
 
 
-
 class UserService:
     model = User
 
     @classmethod
     def get(cls, **filters) -> User:
-        return cls.model.objects.filter(**filters)
+        return cls.model.objects.get(**filters)
+
+    @classmethod
+    def get_all(cls) -> User:
+        return cls.model.objects.all()
 
     @classmethod
     def get_user(cls, **filters) -> User:
@@ -57,9 +60,23 @@ class UserService:
         return filters, default_user
 
     @classmethod
-    def create_user(cls, username: str, email: str, password: str, conf_password: str, **kwargs) -> User:
-        user = cls.model(username=username, email=email, **kwargs)
-        correct_password = validate_user_password(password=password, conf_password=conf_password)
+    def create_user(
+                    cls, 
+                    username: str, 
+                    email: str, 
+                    password: str, 
+                    conf_password: str, 
+                    **kwargs
+                    ) -> User:
+        user = cls.model(
+                        username=username, 
+                        email=email, 
+                        **kwargs
+                        )
+        correct_password = validate_user_password(
+                                                password=password, 
+                                                conf_password=conf_password
+                                                )
         user.set_password(correct_password)
         user.save()
         return user
