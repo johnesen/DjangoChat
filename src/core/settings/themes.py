@@ -22,28 +22,6 @@ JAZZMIN_SETTINGS = {
 
     "show_sidebar": True,
 
-    # "order_with_respect_to": [
-    #     # apps
-    #     "banners",
-    #     "news",
-    #     "prices",
-    #     "clinic",
-    #     "auth",
-    #     # models
-    #     "clinic.AboutUs",
-    #     "clinic.Specialization",
-    #     "clinic.Doctors",
-    #     "clinic.Services",
-    #     "clinic.SubService",
-    #     "clinic.Popular",
-    #     "clinic.Review",
-    #     "clinic.Statistic",
-    #     "clinic.SocialMedia",
-    #     "clinic.Contacts",
-    #     "clinic.Vacancies",
-    #     "clinic.ContactHR",
-    # ],
-
     "navigation_expanded": False,
     "icons": {
         "users.user": "fas fa-user",
@@ -61,7 +39,7 @@ JAZZMIN_SETTINGS = {
         "auth.group": "vertical_tabs",
         "clinic.AboutUs": "single",
     },
-    # "language_chooser": True,
+
 }
 
 JAZZMIN_UI_TWEAKS = {
