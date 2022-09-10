@@ -28,7 +28,7 @@ class RegisterAPIView(APIView):
         return Response(data={
             'message': 'The user has successfully registered and the profile has been successfully created',
             'status': 'CREATED'
-        }, status=status.HTTP_201_CREATED)
+        }, status=status.HTTP_201_CREATED) 
 
 
 class LoginAPIView(APIView):
