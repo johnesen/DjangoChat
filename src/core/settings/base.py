@@ -12,7 +12,7 @@ PRODUCTION = env('PRODUCTION', default=False, cast=bool)
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,6 +39,7 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "drf_yasg",
     'rest_framework',
+    'channels'
 ]
 
 LOCAL_APPS = [

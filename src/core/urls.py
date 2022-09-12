@@ -11,8 +11,8 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('chat/', include('chat.urls')),
     path('product/', include('product.urls')),
-    path('login', users_views.LoginAPIView.as_view(), name='login'),
-    path('register', users_views.RegisterAPIView.as_view(), name='register'),
+    path('login/', users_views.LoginAPIView.as_view(), name='login'),
+    path('register/', users_views.RegisterAPIView.as_view(), name='register'),
 ]
 
 if settings.DEBUG:

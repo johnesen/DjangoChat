@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
 import json
 from .schema import UserRegisterSchema, LoginSchema
-from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
+from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, LogOutRefreshTokenSerializer
 from .services import UserService, JWTTokenService
 
 User = get_user_model()

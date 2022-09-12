@@ -3,8 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import Group
 from .models import User
 
-# admin.site.register(User)
-# Register your models here.
+
 class CustomUserAdmin(UserAdmin):
     model = User
     list_display = ('email', 'is_active')
