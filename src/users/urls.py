@@ -7,5 +7,5 @@ router = routers.DefaultRouter()
 router.register('', UserAPIViewSet, 'user')
 
 urlpatterns = [
-    path('', include(router.urls), name='user'),
+    path('v1', include(router.urls), name='user'),
 ]

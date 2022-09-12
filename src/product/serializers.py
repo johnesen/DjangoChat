@@ -9,16 +9,17 @@ class ProductPhotoSerializer(serializers.ModelSerializer):
         fields = ('id', 'photo')
 
 class ProductSerializer(serializers.ModelSerializer):
-    photos = ProductPhotoSerializer()
+    # photos = ProductPhotoSerializer()
     class Meta:
         model = Product
         fields = [
-                  'id', 
+                  'id',
+                  'user',
                   'title',
                   'description',
                   'currency',
                   'price',
                   'state',
                   'rating',
-                  'discount'
+                  'discount',
                 ]

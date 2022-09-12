@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
 import json
 from .schema import UserRegisterSchema, LoginSchema
-from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
+from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, LogOutRefreshTokenSerializer
 from .services import UserService, JWTTokenService
 
 User = get_user_model()
@@ -28,7 +28,7 @@ class RegisterAPIView(APIView):
         return Response(data={
             'message': 'The user has successfully registered and the profile has been successfully created',
             'status': 'CREATED'
-        }, status=status.HTTP_201_CREATED)
+        }, status=status.HTTP_201_CREATED) 
 
 
 class LoginAPIView(APIView):
