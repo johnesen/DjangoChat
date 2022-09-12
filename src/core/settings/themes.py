@@ -1,16 +1,16 @@
 JAZZMIN_SETTINGS = {
-    "site_title": "NJohnny",
-    "site_header": "NJohnny",
-    "site_brand": "NJohnny",
+    "site_title": None,
+    "site_header": None,
+    "site_brand": None,
     "login_logo": None,
 
     "site_logo": None,
     "site_logo_classes": None,
     "site_icon": None,
 
-    "welcome_sign": "Добро пожаловать в административную панель NJohnny",
-    "copyright": "NJohnny",
-    "user_avatar": "None",
+    "welcome_sign": None,
+    "copyright": None,
+    "user_avatar": None,
 
     "topmenu_links": [
         {
@@ -22,24 +22,22 @@ JAZZMIN_SETTINGS = {
 
     "show_sidebar": True,
 
+    "order_with_respect_to": [
+    ],
+
     "navigation_expanded": False,
     "icons": {
-        "users.user": "fas fa-user",
     },
 
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",
-    "related_modal_active": True,
+    # "related_modal_active": True,
     "custom_css": None,
     "custom_js": None,
     "show_ui_builder": True,
     "changeform_format": "horizontal_tabs",
     "changeform_format_overrides": {
-        "auth.user": "collapsible",
-        "auth.group": "vertical_tabs",
-        "clinic.AboutUs": "single",
     },
-
 }
 
 JAZZMIN_UI_TWEAKS = {
