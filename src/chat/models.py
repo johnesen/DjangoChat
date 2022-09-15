@@ -14,5 +14,5 @@ class Message(BaseModel):
     user = models.ForeignKey(User, related_name='messages', on_delete=models.SET_NULL, null=True, blank=True)
     message = models.TextField()
 
-    # class Meta:
-    #     ordering = ('date_added',)
+    class Meta:
+        ordering = ('created_at',)
