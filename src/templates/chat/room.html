@@ -9,7 +9,7 @@
 
 <div>
     <div>
-        {% for m in messages %}<b>{{ m.user.username }}</b>: {{ m.content }} {{ m.date_added  }}<br>{% endfor %}
+        {% for m in messages %}<b>{{ m.user }}</b>: {{ m.message }} ---- {{ m.created_at  }}<br>{% endfor %}
     </div>
 </div>
 
