@@ -1,16 +1,17 @@
 import os
-from pathlib import Path
-from .env_reader import env
 import datetime
+from pathlib import Path
+from .env_reader import env, csv
+
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-PRODUCTION = env('PRODUCTION', default=False, cast=bool)
+SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = True
+ALLOWED_HOSTS = env('ALLOWED_HOSTS', cast=csv())
 
-ALLOWED_HOSTS = ['*']
+DEBUG = env('DEBUG', default=True, cast=bool)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -30,8 +31,8 @@ DEFAULT_APPS = [
 ]
 
 THEMES = [
-    # 'jazzmin.apps.JazzminConfig',
-    'admin_soft.apps.AdminSoftDashboardConfig'
+    'jazzmin.apps.JazzminConfig',
+    # 'admin_soft.apps.AdminSoftDashboardConfig'
 ]
 
 THIRD_PARTY_APPS = [
@@ -144,6 +145,14 @@ SIMPLE_JWT = {
 
 }
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 TIME_ZONE = 'Asia/Bishkek'
 
 USE_I18N = True
@@ -240,11 +249,3 @@ JAZZMIN_UI_TWEAKS = {
     },
     "actions_sticky_top": True
 }
-
-
-
-if not PRODUCTION:
-    from .local import *
-else:
-    from .production import *
-    # THIRD_PARTY_APPS = THIRD_PARTY_APPS_prod
