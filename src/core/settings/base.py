@@ -30,7 +30,8 @@ DEFAULT_APPS = [
 ]
 
 THEMES = [
-    'jazzmin.apps.JazzminConfig',
+    # 'jazzmin.apps.JazzminConfig',
+    'admin_soft.apps.AdminSoftDashboardConfig'
 ]
 
 THIRD_PARTY_APPS = [
