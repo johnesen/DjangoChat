@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.documentation import include_docs_urls
 from users import views as users_views
+from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,6 +14,7 @@ urlpatterns = [
     path('product/', include('product.urls')),
     path('login/', users_views.LoginAPIView.as_view(), name='login'),
     path('register/', users_views.RegisterAPIView.as_view(), name='register'),
+    path('v1/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
 if settings.DEBUG:
