@@ -14,5 +14,5 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='chat/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('room/', views.rooms, name='rooms'),
-    path('room/<slug:slug>/', views.room, name='room'),
+    path('room/<str:id>/', views.room, name='room'),
 ]

@@ -13,7 +13,7 @@
             <div>
                 <h2>{{ room.name }}</h2>
 
-                <a href="{% url 'room' room.slug %}">Join</a>
+                <a href="{% url 'room' room.id %}">Join</a>
             </div>
         </div>
     {% endfor %}
