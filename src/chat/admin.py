@@ -1,8 +1,24 @@
 from django.contrib import admin
-from .models import Room, Message
+
+from chat.models import ChatSendPhoto, Message, Room
+
+admin.site.register(ChatSendPhoto)
 
 
-admin.site.register(Room)
-admin.site.register(Message)
+@admin.register(Room)
+class RoomAdmin(admin.ModelAdmin):
+    list_display = ["id", "product", "created_at"]
+    fields = [
+        "product",
+        "sender",
+        "reciever",
+        "updated_at",
+        "created_at",
+        "is_deleted",
+    ]
+    readonly_fields = ["id", "created_at", "updated_at"]
 
-# Register your models here.
+
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ["id", "room", "user", "message", "is_read", "created_at"]
